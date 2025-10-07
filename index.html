@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Astra Properties</title>
+    <link rel="icon" href="images/astra icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="loading-screen">
+      <div class="main-tri">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="cover-page"></div>
+    <section class="header" id="header">
+      <div class="navbar" id="navbar">
+        <div class="nav" id="nav">
+          <ul>
+            <li onclick="fun()">&times;</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="token.html"> Token</a></li>
+            <li><a href="nft.html">Nft</a></li>
+          </ul>
+        </div>
+        <div class="icon">
+          <img src="images/astra icon.png" alt="astra icon" />
+        </div>
+        <div class="harmburger" id="harmburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+      <div class="container" id="container">
+        <div class="main-slide">
+          <div class="slide-container">
+            <div class="content">
+              <h2>Asset Properties Asset 225 Gold</h2>
+              <p>
+                Astra Properties is a premier real estate investement firm
+                compromised of seasoned professionals
+              </p>
+              <div class="supply">
+                <p>Supply: 30</p>
+                <button>Buy now</button>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="images/gold.png" alt="" class="gold" />
+            </div>
+          </div>
+          <div class="slide-container">
+            <div class="content">
+              <h2>Asset Properties Asset 225 Silver</h2>
+              <p>
+                Designed to reward you today and in future, these nft embody our
+                commitment to scaling together.
+              </p>
+              <div class="supply">
+                <p>Supply: 75</p>
+                <button>Buy now</button>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="images/silver.png" alt="" />
+            </div>
+          </div>
+          <div class="slide-container">
+            <div class="content">
+              <h2 class="bronze">Asset Properties Asset 225 Bronze</h2>
+
+              <div class="supply">
+                <p>Supply: 120</p>
+                <button>Buy now</button>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="images/bronze.png" alt="" class="bronze" />
+            </div>
+          </div>
+          <div class="slide-container">
+            <div class="content">
+              <h2>Asset 225</h2>
+              <p>
+                We are excited to present the breakdown of our asset 225 single
+                family home rental revenue share NFTs! here is everything you
+                need to know:NFT Levels and Pricing
+              </p>
+              <div class="supply">
+                <button>Read More</button>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="images/more.png" alt="" class="more" />
+            </div>
+          </div>
+        </div>
+        <div class="numbers">
+          <p class="number" onclick="currentSlide(1)">01</p>
+          <p class="number" onclick="currentSlide(2)">02</p>
+          <p class="number" onclick="currentSlide(3)">03</p>
+          <p class="number" onclick="currentSlide(4)">04</p>
+        </div>
+        <div class="dotted">
+          <span class="dots" onclick="currentSlide(1)"></span>
+          <span class="dots" onclick="currentSlide(2)"></span>
+          <span class="dots" onclick="currentSlide(3)"></span>
+          <span class="dots" onclick="currentSlide(4)"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="fade"></div>
+
+    <section class="greetings" id="greetings">
+      <div class="welcome">
+        <h2>
+          &nbsp;Welcome To <br />
+          Astra Properties
+        </h2>
+        <p>
+          Astra Properties is a premier real estate investment firm comprised of
+          seasoned professionals. With a deep-rooted understanding of the
+          market, we are committed to empowering investors with accurate and
+          insightful information. <br />Our Goal: Our goal is to assist you in
+          making well-informed investment decisions that align with your
+          financial objectives, regardless of your experience level.
+        </p>
+      </div>
+      <div class="on-chain">
+        <div class="text">
+          <h2>Real Estate On Chain, why Alephium?</h2>
+          <p>
+            Alephium (ALPH) is a revolutionary Layer 1 blockchain platform
+            engineered to overcome the inherent challenges of traditional
+            blockchain networks. By employing cutting-edge technologies like
+            sharding, Proof of Less Work, and a proprietary virtual machine,
+            Alephium delivers unmatched scalability, security, and
+            decentralization.
+          </p>
+          <p>
+            This innovative approach enables the platform to support
+            high-throughput decentralized applications and smart contracts while
+            optimizing energy consumption and maintaining robust security
+            protocols.
+          </p>
+          <p>
+            Alephium's innovative sharding algorithm, BlockFlow, utilizes a
+            stateful UTXO model and DAG data structure to achieve efficient and
+            practical sharding.
+          </p>
+          <p>
+            This enables Alephium to process over 10,000 transactions per second
+            while maintaining a unified single-chain user experience.
+          </p>
+        </div>
+        <div class="img">
+          <img src="images/astra icon.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="token" id="token">
+      <div class="top">
+        <h2>Tokenization</h2>
+        <p>How it works</p>
+      </div>
+      <div class="main">
+        <div class="contain">
+          <h2>Asset Tokenization Explained</h2>
+          <div class="icon">
+            <img src="images/checkmark-48.png" alt="" />
+          </div>
+          <div class="text">
+            <p class="own">
+              Asset tokenization is like converting real-world assets (like a
+              house or estate) into digital tokens. These tokens are stored on a
+              blockchain, like Alephium .
+            </p>
+            <p class="own">
+              Wondering how tokenizing real estate could work? Well, let’s take
+              a deeper dive Imagine a luxury apartment building. Traditionally,
+              to own a part of this building, you'd have to buy an entire
+              unit.However, with tokenization, this building can be divided into
+              thousands of tiny digital tokens.
+            </p>
+          </div>
+        </div>
+        <div class="contain">
+          <h2>How it works?</h2>
+          <div class="icon">
+            <img src="images/chain.png" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              <strong>Tokenization:</strong> The building's ownership is broken
+              down into these tokens. Each token represents a specific fraction
+              of the property.
+            </p>
+            <p>
+              <strong>Sale of Tokens: </strong>These tokens are then minted and
+              sold on a blockchain platform. Investors can buy as many tokens as
+              they can afford.
+            </p>
+            <p>
+              <strong>Fractional Ownership:</strong> By owning tokens, investors
+              effectively own a fraction of the building. They share in the
+              potential rental income and appreciation of the property's value.
+            </p>
+            <p>
+              <strong>Sale of Tokens: </strong>These tokens are then minted and
+              sold on a blockchain platform. Investors can buy as many tokens as
+              they can afford.
+            </p>
+            <p>
+              <strong>Fractional Ownership: </strong>By owning tokens, investors
+              effectively own a fraction of the building. They share in the
+              potential rental income and appreciation of the property's value.
+            </p>
+            <p>
+              <strong>4 Liquidity:</strong> Unlike traditional real estate,
+              these tokens can be traded on the blockchain market. This means
+              investors can sell their tokens at any time, providing greater
+              liquidity.
+            </p>
+          </div>
+        </div>
+        <div class="contain">
+          <h2>Benefits of Tokenized Real Estate</h2>
+          <div class="icon">
+            <img src="images/hourGlass.png" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              <strong> •Accessibility: </strong>Smaller investors can now
+              participate in real estate markets that were previously out of
+              reach.
+            </p>
+            <p>
+              <strong>•Liquidity: </strong>Tokenized real estate offers greater
+              liquidity compared to traditional property ownership.
+            </p>
+            <p>
+              <strong>•Fractional Ownership:</strong> Investors can diversify
+              their real estate portfolio by owning small stakes in multiple
+              properties.
+            </p>
+
+            <p>
+              <strong>•Transparency: </strong>Blockchain technology ensures
+              transparency in ownership and transaction records.
+            </p>
+            <p>
+              In essence, tokenizing real estate allows for fractional
+              ownership, increased liquidity, and greater accessibility to a
+              wider range of investors. It's a way to democratize real estate
+              investment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nft" id="nft">
+      <h2>Our NFTs</h2>
+      <div class="grid">
+        <div class="img">
+          <img src="images/gold.png" alt="" />
+          <h3>Supply: 30</h3>
+          <p>Astra Properties Asset 225 Gold</p>
+          <div class="items">
+            <i class="fa-solid fa-bag-shopping"><a href=""></a></i>
+            <i class="fa-solid fa-link"><a href=""></a></i>
+          </div>
+        </div>
+        <div class="img">
+          <img src="images/more.png" alt="" />
+          <div class="items">
+            <i class="fa-solid fa-bag-shopping"> <a href=""></a></i>
+            <i class="fa-solid fa-link"><a href=""></a></i>
+          </div>
+          <h3>Asset 225</h3>
+        </div>
+      </div>
+      <a href="nft.html"
+        ><button><i class="fa-solid fa-forward"></i>more</button></a
+      >
+    </section>
+    <footer>
+      <h3>&copy; 2024 by Astra Properties Group | All Rights Reserved.</h3>
+      <div class="social">
+        <p><a href="">Discord</a></p>
+        <span></span>
+        <p><a href="">X(Twitter)</a></p>
+      </div>
+    </footer>
+    <div class="foot">
+      <a href="nft.html"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ca8f65"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+        </svg>
+      </a>
+    </div>
+    <script src="js/index.js" defer></script>
+  </body>
+</html>
+<!---<code by 4desol4-->

@@ -1,0 +1,1054 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Poetsen+One&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  background: #303030;
+}
+.cover-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 100;
+}
+.loading-screen {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+.loading-screen .main-tri {
+  height: 0px;
+  width: 0px;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  border-bottom: 70px solid rgba(202, 143, 101);
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  animation: stuck 10s ease-out;
+}
+@keyframes stuck {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-screen .main-tri div {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  border-top: 70px solid rgba(202, 143, 101, 0.8);
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  left: -80px;
+
+  transform-origin: top right;
+  animation: animate 3s ease-in-out infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0);
+  }
+  80% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(240deg);
+  }
+}
+
+.loading-screen .main-tri div:nth-child(2) {
+  left: 0px;
+  transform-origin: bottom;
+}
+.loading-screen .main-tri div:nth-child(3) {
+  bottom: -140px;
+  left: -40px;
+  transform-origin: top left;
+}
+.header {
+  height: 974px;
+  background: linear-gradient(
+      to bottom,
+      rgba(22, 22, 22, 0.85),
+      rgba(0, 0, 0, 0.95)
+    ),
+    url(../images/astra.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.header .navbar.sticky {
+  position: fixed;
+  top: 0;
+  background: rgb(28, 28, 28, 0.82);
+  backdrop-filter: blur(25px);
+  height: 70px;
+  animation: scrol 0.4s ease-in;
+  z-index: 100;
+}
+@keyframes scrol {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.header .navbar.sticky .nav li a {
+  font-size: 1em;
+}
+.header .navbar.sticky .icon img {
+  height: 60px;
+  width: 80px;
+}
+.header .navbar {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  top: 0;
+  position: absolute;
+}
+.header .navbar .nav {
+  width: 450px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.5s;
+}
+.header .navbar ul li {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+.header .navbar ul li a {
+  text-decoration: none;
+  color: #ca8f65;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in;
+}
+.header .navbar .nav li:nth-child(1) {
+  display: none;
+}
+.header .navbar ul li:nth-child(2) a {
+  color: #ebded5;
+}
+.header .navbar ul li a:hover {
+  color: #ebded5;
+}
+.header .navbar .icon img {
+  height: 100px;
+  width: 120px;
+}
+.header .navbar .icon {
+  display: flex;
+  height: 200px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 42%;
+}
+.header .navbar .harmburger {
+  display: none;
+  cursor: pointer;
+}
+.header .navbar .harmburger .bar {
+  height: 2px;
+  width: 20px;
+  background: #ca8f65;
+  border-radius: 2px;
+  margin: 4px;
+
+  transition: all 0.5s;
+}
+.header .navbar .harmburger:hover .bar {
+  background: #ebded5;
+}
+.greetings {
+  height: 900px;
+  width: 100%;
+}
+
+.header .container {
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.header .container .main-slide {
+  width: 100%;
+  margin: 0 15px;
+  overflow: hidden;
+  height: 600px;
+}
+
+.header .container .slide-container {
+  display: none;
+  align-items: center;
+  padding: 5px;
+  flex-direction: row;
+  height: 500px;
+}
+
+.header .container .slide-container .content {
+  margin: 50px;
+  min-height: 200px;
+  width: 500px;
+  margin-right: 80px;
+  animation: slide 0.5s linear;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  flex-direction: column;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+.header .container .slide-container .content h2 {
+  font-weight: bold;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 4em;
+  text-align: left;
+  width: 400px;
+  min-height: 150px;
+
+  margin-bottom: 10px;
+  color: rgb(228, 219, 195);
+  text-transform: uppercase;
+}
+.header .container .slide-container .content .bronze {
+  font-size: 4em;
+}
+.header .container .slide-container .content p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  width: 300px;
+  height: auto;
+
+  color: rgb(228, 219, 195);
+}
+.header .container .slide-container .content .supply {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  width: 270px;
+}
+.header .container .slide-container .content .supply p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 30px;
+  color: #ca8f65;
+  font-weight: lighter;
+}
+.header .container .slide-container .content .supply button {
+  height: 50px;
+  width: 180px;
+  background: transparent;
+  border: 2px solid #ca8f65;
+  color: #ca8f65;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.header .container .slide-container .content .supply button:hover {
+  border: 2px solid rgb(228, 219, 195);
+  color: rgb(228, 219, 195);
+}
+.header .container .slide-container .slide img {
+  height: 480px;
+  width: 500px;
+  animation: slid 1.5s ease-in;
+  z-index: 1;
+  margin-left: 20px;
+}
+.header .container .slide-container .slide .gold {
+  height: 320px;
+}
+.header .container .slide-container .slide .bronze {
+  height: 300px;
+}
+.header .container .slide-container .slide .more {
+  height: 400px;
+}
+@keyframes slid {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+}
+.header .container .numbers {
+  width: 50px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 10px;
+  justify-content: center;
+  padding: 30px;
+  position: absolute;
+  right: 30px;
+}
+.header .container .numbers p {
+  font-size: 20px;
+  color: rgb(228, 219, 195);
+  cursor: pointer;
+  margin: 40px 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+.header .container .numbers p:hover {
+  color: #ca8f65;
+}
+.header .container .numbers p.tame {
+  color: #ca8f65;
+}
+.header .container .dotted {
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  bottom: 120px;
+  left: 35%;
+  display: none; /*flex*/
+  align-items: center;
+  justify-content: center;
+}
+.header .container .dotted .dots {
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: 2px solid #ca8f65;
+  border-radius: 50%;
+  margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header .container .dotted .dots.stay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ca8f65;
+  background: #ca8f65;
+  animation: wat 0.5s ease-in;
+}
+@keyframes wat {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.fade {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    0deg,
+    rgb(48, 48, 48) 0%,
+    rgb(48, 48, 48) 35%,
+    rgba(48, 48, 48, 0) 100%
+  );
+  position: relative;
+  top: -120px;
+  z-index: 10;
+}
+.greetings {
+  height: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  flex-direction: column;
+  position: relative;
+  top: 0;
+  margin: 20px 0;
+}
+.greetings .welcome {
+  position: relative;
+  top: 10px;
+  text-align: center;
+  width: 70%;
+}
+.greetings .welcome h2 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ca8f65;
+  text-transform: uppercase;
+  text-align: center;
+}
+.greetings .welcome p {
+  text-align: left;
+  line-height: 30px;
+  color: rgb(228, 219, 195);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: lighter;
+  font-size: 1.35em;
+}
+.greetings .on-chain {
+  margin-top: 80px;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background: #272727;
+  border: 2px solid #ca8f65;
+  padding: 80px 20px;
+  display: flex;
+}
+.greetings .on-chain .text {
+  flex-wrap: wrap;
+}
+.greetings .on-chain .text h2 {
+  color: #ca8f65;
+  text-transform: capitalize;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 65px;
+  margin-bottom: 15px;
+  font-family: "Big Shoulders Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+    sans-serif;
+  text-align: justify;
+}
+.greetings .on-chain .text p {
+  color: #ebded5;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: 0 0 16px 0;
+  flex-wrap: wrap;
+}
+.greetings .on-chain .img img {
+  height: 330px;
+  width: 350px;
+}
+.token {
+  min-height: 800px;
+  width: 100%;
+  background: #303030;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 20px;
+  border-top: 2px solid #ca8f65;
+  top: 0;
+  justify-content: center;
+  position: relative;
+}
+.token .top {
+  position: relative;
+  top: 20px;
+  text-align: center;
+}
+.token .top h2 {
+  font-size: 3em;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ca8f65;
+  text-transform: capitalize;
+  position: relative;
+}
+.token .top h2::before {
+  height: 0;
+  width: 0;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #ca8f65;
+  border-top: 15px solid transparent;
+  content: "";
+
+  position: absolute;
+  left: -40px;
+  top: 17px;
+}
+.token .top h2::after {
+  height: 0;
+  width: 0;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #ca8f65;
+  border-top: 15px solid transparent;
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 17px;
+}
+.token .top p {
+  color: #a6a6a6;
+  font-size: 20px;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: capitalize;
+}
+.token .main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.token .main .contain {
+  display: flex;
+  margin: 20px 0;
+  width: 100%;
+  overflow: hidden;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+}
+.token .main .contain h2 {
+  font-size: 40px;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ca8f65;
+  text-transform: capitalize;
+  font-weight: 300;
+  width: 400px;
+  text-align: center;
+  margin-right: 40px;
+}
+.token .main .contain .icon img {
+  width: 35px;
+  height: 30px;
+}
+.token .main .contain .icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid #808080;
+  display: grid;
+  place-items: center;
+}
+.token .main .contain .text {
+  width: 400px;
+  height: 100%;
+  padding: 10px;
+  margin-left: 50px;
+}
+.token .main .contain .text p {
+  color: #a6a6a6;
+  font-size: 15px;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 20px;
+  margin-bottom: 5px;
+  text-align: justify;
+}
+.token .main .contain .text .own {
+  line-height: 30px;
+}
+.nft {
+  position: relative;
+  top: 0;
+  min-height: 600px;
+  background: #272727;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.nft h2 {
+  color: #ca8f65;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.nft .grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 450px);
+  grid-template-rows: repeat(1, 400px);
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.nft .grid .img {
+  height: 400px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.nft .grid .img img {
+  width: 400px;
+  height: 300px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.nft .grid .img h3 {
+  font-size: 20px;
+  text-align: center;
+  color: #797878;
+  text-transform: capitalize;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.nft .grid .img p {
+  color: #a6a6a6;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+}
+.nft .grid .img .items {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  transform: translateY(20px);
+}
+.nft .grid .img:hover .items {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nft .grid .items i {
+  color: #ebded5;
+  font-size: 20px;
+  margin: 5px 0;
+  border: 2px solid #ebded5;
+  border-radius: 50%;
+  padding: 7px 7px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+.nft .grid .items i:hover {
+  color: #ca8f65;
+}
+.nft button {
+  height: 50px;
+  width: 140px;
+  background: transparent;
+  border: 2px solid #ca8f65;
+  color: #ca8f65;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  border-radius: 8px;
+}
+.nft button i {
+  color: #ca8f65;
+  font-size: 20px;
+  transition: all 0.5s;
+  margin-right: 10px;
+}
+.nft button:hover {
+  border: 2px solid rgb(228, 219, 195);
+  color: rgb(228, 219, 195);
+}
+.nft button:hover i {
+  color: rgb(228, 219, 195);
+}
+footer {
+  height: 100px;
+  width: 100%;
+  background: #272727;
+  position: relative;
+  bottom: 0;
+  border-top: 1px solid #a6a6a6;
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+}
+footer h3 {
+  color: #ebded5;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+}
+footer .social {
+  display: flex;
+  justify-content: center;
+}
+footer .social span {
+  height: 20px;
+  width: 1px;
+  background: #797878;
+}
+footer .social p a {
+  color: #ebded5;
+  text-decoration: none;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  margin: 0 20px;
+}
+footer .social p a:hover {
+  color: #ca8f65;
+}
+.foot {
+  height: 70px;
+  width: 100%;
+  background: rgb(28, 28, 28);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+@media screen and (max-width: 1150px) {
+  .header .navbar .nav {
+    position: fixed;
+    height: 1000px; /*check problem of using 100%*/
+    top: 0;
+    right: -280px;
+    width: 250px;
+    overflow: hidden;
+    background: #161616;
+    display: block;
+    padding: 100px 0;
+    z-index: 1000;
+  }
+  .header .navbar.sticky .nav {
+    animation: none;
+  }
+  .header .navbar ul li {
+    border-width: 1px 0 0 0;
+    border-color: #555;
+    border-style: solid;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  .header .navbar ul li a {
+    font-size: 1em;
+  }
+  .header .navbar ul li:nth-child(1) {
+    border: none;
+    width: 40px;
+  }
+  .header .navbar ul li:last-child {
+    border-bottom: 1px solid #555;
+  }
+  .header .navbar .icon {
+    position: relative;
+    left: 0;
+  }
+  .header .navbar .harmburger {
+    display: block;
+  }
+  .header .navbar .nav li:nth-child(1) {
+    font-size: 45px;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 10px;
+    color: #ca8f65;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .header .navbar .nav li:nth-child(1):hover {
+    color: #ebded5;
+  }
+  .header .container .slide-container .content {
+    width: 300px;
+    margin-right: 100px;
+  }
+
+  .header .container .slide-container .content h2 {
+    font-size: 3.8em;
+  }
+  .header .container .slide-container .content p {
+    font-size: 15px;
+  }
+
+  .header .container .slide-container .content .supply p {
+    font-size: 24px;
+  }
+  .header .container .slide-container .content .supply button {
+    height: 40px;
+    width: 140px;
+    font-size: 14px;
+  }
+  .header .container .slide-container .slide img {
+    height: 420px;
+    width: 460px;
+  }
+  .header .container .numbers {
+    right: 0;
+  }
+  .greetings .on-chain .text h2 {
+    font-size: 50px;
+  }
+  .greetings .on-chain .text p {
+    font-size: 15px;
+  }
+  .greetings .welcome p {
+    font-size: 1.15em;
+  }
+  .nft {
+    padding: 20px;
+  }
+  .nft .grid {
+    grid-template-columns: repeat(2, 340px);
+    grid-template-rows: repeat(1, 340px);
+    gap: 100px;
+    margin: 20px 0;
+  }
+  .nft .grid .img {
+    height: 340px;
+    width: 340px;
+  }
+  .nft .grid .img img {
+    width: 270px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header .container .slide-container .slide img {
+    height: 380px;
+    width: 340px;
+  }
+  .header .container .slide-container .slide .gold {
+    height: 280px;
+  }
+  .header .container .slide-container .slide .bronze {
+    height: 220px;
+  }
+  .header .container .slide-container .slide .more {
+    height: 320px;
+  }
+  .header .container .slide-container .content .bronze {
+    font-size: 3.5em;
+  }
+  .token .main .contain {
+    height: 560px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .greetings {
+    height: 1300px;
+  }
+  .header .container .slide-container .slide img {
+    height: 340px;
+    width: 280px;
+  }
+  .header .container .slide-container .slide .gold {
+    height: 240px;
+  }
+  .header .container .slide-container .slide .bronze {
+    height: 220px;
+  }
+  .header .container .slide-container .slide .more {
+    height: 240px;
+  }
+  .nft .grid {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header .navbar.sticky {
+    animation: none;
+  }
+  .header .navbar {
+    height: 100px;
+    background: rgb(28, 28, 28, 0.82);
+  }
+  .header .navbar .icon img {
+    height: 60px;
+    width: 80px;
+  }
+  .header .container .main-slide {
+    height: 100%;
+  }
+  .header .container .main-slide .slide-container {
+    flex-direction: column;
+  }
+  .header .container .main-slide .slide-container .content {
+    margin-bottom: 80px;
+  }
+  .header .container .main-slide .slide-container .content h2 {
+    font-size: 3em;
+    width: 300px;
+  }
+  .header .container .main-slide .slide-container .slide img {
+    width: 300px;
+    height: 270px;
+  }
+  .header .container .slide-container .slide .gold {
+    height: 240px;
+  }
+  .header .container .main-slide .slide-container .content p {
+    display: none;
+  }
+  .header .container .main-slide .slide-container .content .supply p {
+    display: block;
+    font-weight: lighter;
+  }
+  .header .container .numbers {
+    display: none;
+  }
+  .header .container .dotted {
+    display: flex;
+  }
+  .greetings {
+    padding: 0 40px;
+    height: 1500px;
+  }
+  .greetings .on-chain {
+    flex-direction: column;
+  }
+  .greetings .on-chain .img img {
+    height: 300px;
+    width: 320px;
+  }
+  .greetings .welcome {
+    width: 100%;
+  }
+  .greetings .welcome h2 {
+    font-size: 2.7em;
+    font-weight: 500;
+  }
+  .greetings .welcome p {
+    font-size: 1em;
+  }
+  .token .main {
+    margin-top: 10px;
+  }
+  .token .main .contain {
+    flex-direction: column;
+    height: 600px;
+  }
+  .token .main .contain h2 {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .token .main .contain .text {
+    margin-left: 0;
+  }
+  .token .main .contain .icon img {
+    width: 20px;
+    height: 20px;
+  }
+  .token .main .contain .icon {
+    height: 50px;
+    width: 50px;
+  }
+  .nft {
+    padding: 20px;
+  }
+  .nft .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(1, 200px);
+    gap: 100px;
+    margin: 20px 0;
+  }
+  .nft .grid .img {
+    height: 200px;
+    width: 200px;
+  }
+  .nft .grid .img img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  footer {
+    padding: 20px;
+    height: 180px;
+  }
+  footer h3 {
+    font-size: 16px;
+  }
+  footer .social p a {
+    font-size: 16px;
+  }
+  .nft .grid .items i {
+    font-size: 12px;
+    padding: 5px 5px;
+  }
+
+  .nft button {
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+  }
+  .foot {
+    display: flex;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header .container .dotted {
+    left: 28%;
+  }
+  .token .main .contain .text {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header .container .dotted {
+    left: 25%;
+  }
+  .token .main .contain .text {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 360px) {
+  footer h3 {
+    font-size: 13px;
+  }
+  footer .social p a {
+    font-size: 13px;
+  }
+  .foot {
+    height: 40px;
+  }
+  .foot a {
+    width: 20px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+/*code by 4desol4*/
